@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="ownerId" content="1666902">
+      <meta name="publishedId" content="6mz5cLC">
+
+      <!-- <meta name="description" content="The Politicc Documenter generates and maintains beautiful, live documentation for your collections. Never worry about maintaining API documentation again."> -->
+    <!-- <meta name="generator" content=" Politicc Documenter"> -->
+      <title>Politi.cc Developer API</title>
+
+    <!-- Google Tag Manager -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KCKQFT');</script> -->
+    <!-- End Google Tag Manager -->
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://documenter.getpostman.com/docs-assets/styles/dependencies/bootstrap.min.css">
+    <link rel="stylesheet" href="https://documenter.getpostman.com/docs-assets/styles/dependencies/prism-coy.css">
+    <link rel="stylesheet" href="https://documenter.getpostman.com/docs-assets/styles/dependencies/prism-okaidia.css">
+    <link rel="stylesheet" type="text/css" href="https://documenter.getpostman.com/docs-assets/styles/importer.css">
+      <link rel="stylesheet" type="text/css" href="https://documenter.getpostman.com/docs-assets/styles/custom.scss?top-bar=FFFFFF&amp;right-sidebar=f7f7f7&amp;highlight=fa0030&amp;">
+    <link rel="shortcut icon" href="https://politi.cc/favicon.ico" />
+
+      <link rel="stylesheet" href="https://run.pstmn.io/button.css">
+
+    <script src="https://documenter.getpostman.com/docs-assets/js/messenger-setup.js"></script>
+      <meta property="og:title" content="Politi.cc Developer API" />
+      <meta property="og:description" content="The Politicc Documention for our collections." />
+    <meta property="og:site_name" content=" Politicc Documentation" />
+    <meta property="og:image" content="https://static1.squarespace.com/static/59711f5703596ed825d63235/t/59714c9615d5dbf87e0c1bfb/1501107190173.png" />
+
+      <meta name="twitter:title" value="Politi.cc Developer API" />
+      <meta name="twitter:description" value="The Politicc Documenter generates and maintains beautiful, live documentation for your collections. Never worry about maintaining API documentation again." />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" value="documenter.getpostman.com" />
+    <meta name="twitter:image" content="https://static1.squarespace.com/static/59711f5703596ed825d63235/t/59714c9615d5dbf87e0c1bfb/1501107190173.png" />
+    <meta name="twitter:label1" value="Last Update" />
+    <meta name="twitter:data1" value="" />
+  </head>
+
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCKQFT"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+  <!-- End Google Tag Manager (noscript) -->
+
+    <div class="layout">
+  <div class="top-bar">
+    <div id="menu-toggle" class="visible-xs visible-sm"></div>
+
+      <div class="branded-logo" data-identity-href="//i.imgur.com/jP15sWx.png"></div>
+
+    <div class="top-bar-right">
+        <div class="hidden-xs hidden-sm publish-doc">
+        </div>
+
+        <div class="public-col">
+          <a href="https://politi.cc">
+          <div class="globe public hidden-xs">Back to Politi.cc</div>
+        </a>
+        </div>
+
+          <div class="postman-run-button"
+            data-postman-action="collection/import"
+            data-postman-var-1="1666902-3cca7e4f-cdb6-9846-ed13-529dc8cc0537-6mz5cLC"></div>
+        <script src="https://documenter.getpostman.com/docs-assets/js/runbutton.js" type="text/javascript" id="public-run-button-embed" data-web-host="https://www.getpostman.com/" data-button-url="https://run.pstmn.io/button.js"></script>
+
+        <!-- <div class="environment-dropdown dropdown hidden-xs">
+            <button class="btn btn-default dropdown-toggle" type="button" id="environment-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <div class="dropdown-button ellipsis active-environment" data-environment-id="47cd0f38-8fda-2aad-7e5a-cc69cfcafbbe">Public Imgur Template.template</div>
+
+                <script src="https://documenter.getpostman.com/docs-assets/js/run-env-setup.js" type="text/javascript" id="public-run-button-env" data-env-name="Public Imgur Template.template" data-env-values="[{&quot;enabled&quot;:true,&quot;key&quot;:&quot;clientId&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;password&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;username&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;accessToken&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;favoritesSort&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;albumHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;albumDeleteHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;commentId&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;imageHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;imageHash2&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;imageDeleteHash2&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;vote&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;section&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;page&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;sort&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;window&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;showViral&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;showMature&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;albumPreviews&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;commentSort&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;galleryHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;commentValue&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;subreddit&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;subredditImageId&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;tagName&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;}]"></script>
+              <span class="pm-doc-sprite pm-doc-sprite-dropdown-caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="environment-dropdown">
+                <li class="dropdown-menu-item" data-environment-id="0">No environment</li>
+                <li class="dropdown-menu-seperator"></li>
+                <li class="dropdown-menu-section">Shared Templates</li>
+                <li class="dropdown-menu-item " data-environment-id="47cd0f38-8fda-2aad-7e5a-cc69cfcafbbe">Public Imgur Template.template</li>
+                <li class="dropdown-menu-seperator"></li>
+                <li class="dropdown-menu-section">Private Environments</li>
+                <li class="dropdown-menu-item dropdown-menu-empty" data-environment-id="">No private environments</li>
+            </ul>
+        </div> -->
+
+
+      <button type="button" class="btn pm-btn pm-btn-secondary settings-toggle visible-xs">
+        <span class="icon settings-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="modal" id="rawBodyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+      <div>
+        <span aria-hidden="true">×</span>
+      </div>
+    </button>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='container-fluid no-gutter'>
+    <div class="row no-gutter">
+      <div class="col-xs-12 info no-gutter">
+        <div id="mobile-controls">
+
+          <label>Environment</label>
+            <div class="environment-dropdown dropdown">
+                <button class="btn pm-btn pm-btn-secondary dropdown-toggle" type="button" id="environment-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <div class="dropdown-button ellipsis" data-environment-id="47cd0f38-8fda-2aad-7e5a-cc69cfcafbbe">Public Imgur Template.template</div>
+
+                    <script src="https://documenter.getpostman.com/docs-assets/js/run-env-setup.js" type="text/javascript" id="public-run-button-env" data-env-name="Public Imgur Template.template" data-env-values="[{&quot;enabled&quot;:true,&quot;key&quot;:&quot;clientId&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;password&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;username&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;accessToken&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;favoritesSort&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;albumHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;albumDeleteHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;commentId&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;imageHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;imageHash2&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;imageDeleteHash2&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;vote&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;section&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;page&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;sort&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;window&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;showViral&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;showMature&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;albumPreviews&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;commentSort&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;galleryHash&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;commentValue&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;subreddit&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;subredditImageId&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;enabled&quot;:true,&quot;key&quot;:&quot;tagName&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:&quot;text&quot;}]"></script>
+                  <span class="pm-doc-sprite pm-doc-sprite-dropdown-caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="environment-dropdown">
+                    <li class="dropdown-menu-item" data-environment-id="0">No environment</li>
+                    <li class="dropdown-menu-seperator"></li>
+                    <li class="dropdown-menu-section">Shared Templates</li>
+                    <li class="dropdown-menu-item " data-environment-id="47cd0f38-8fda-2aad-7e5a-cc69cfcafbbe">Public Imgur Template.template</li>
+                    <li class="dropdown-menu-seperator"></li>
+                    <li class="dropdown-menu-section">Private Environments</li>
+                    <li class="dropdown-menu-item dropdown-menu-empty" data-environment-id="">No private environments</li>
+                </ul>
+            </div>
+
+            <label>Language</label>
+            <div class="language">
+              <div class="btn-group languages">
+                <button type="button" class="btn pm-btn pm-btn-secondary dropdown-toggle language-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <div class="active-lang ellipsis">cURL</div>
+                  <span class="pm-doc-sprite pm-doc-sprite-dropdown-caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right language_dropdown">
+                  <li class="dropdown-menu-item" data-snippetname=shell:curl>cURL</li>
+                  <li class="dropdown-menu-item" data-snippetname=javascript:jquery>jQuery</li>
+                  <li class="dropdown-menu-item" data-snippetname=ruby:native>Ruby</li>
+                  <li class="dropdown-menu-item" data-snippetname=python:requests>Python Requests</li>
+                  <li class="dropdown-menu-item" data-snippetname=node:native>Node</li>
+                  <li class="dropdown-menu-item" data-snippetname=php:curl>PHP</li>
+                  <li class="dropdown-menu-item" data-snippetname=go:native>Go</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+
+        <div id="doc-body" class="is-loading">
+          <div class="initial-loader">
+            <div class="spinner"></div>
+            Just a moment...
+          </div>
+        </div>
+
+        <a href="https://www.getpostman.com/docs/creating_documentation" target="_blank" class="promo-banner is-hidden" id="live-documentation-banner">
+          <div class="container">
+            <i class="pm-generic-icon pm-icon-orange-back pm-icon-rounded pm-icon-lg pm-generic-icon-book"></i>
+            <h3>This is live documentation generated by  Politicc Pro</h3>
+            <span>Create your own live docs</span>
+          </div>
+        </a>
+      </div>
+      <div class="no-gutter index sidebar">
+        <div class="collection-heading">
+          <p class="heading">Politi.cc Developer API</p>
+        </div>
+        <ul class="nav navbar-nav" id="navbar-example">
+          <li class="request intro">
+            <a class="nav-link dropdown-item" href="#">
+              <div class="request-name">Introduction</div>
+            </a>
+          </li>
+          <li class="toc">
+            <ul></ul>
+          </li>
+              <li class="folder clearfix">
+                <div class="folder-label clearfix">
+                  <div class="toggle-folder-collapse">
+                    <div class="pm-doc-sprite pm-doc-sprite-triangle">
+                    </div>
+                  </div>
+                  <div class="pm-doc-sprite pm-doc-sprite-folder"></div>
+                  <div class="folder-link">
+                    <a class="nav-link dropdown-item" href="#media">
+                      <div class="name truncate">
+                        <span>Media</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <ul>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="/v1/media/company/:companyId (or companySlug)">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>/v1/media/company/:companyId (or companySlug)</span>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="/v1/media/company">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>/v1/media/company</span>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="GET /v1/media/company">
+                          <a class="nav-link dropdown-item" href="#media-company">
+                            <span>GET /v1/media/company</span>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="GET /v1/media/company/personnel | param=[sortPerssonelBy]">
+                          <a class="nav-link dropdown-item" href="#media-company-personnel">
+                            <span>GET /v1/media/company/personnel | param=[sortPerssonelBy]</span>
+                          </a>
+                        </div>
+                      </li>
+                </ul>
+              </li>
+              <li class="folder clearfix">
+                <div class="folder-label clearfix">
+                  <div class="toggle-folder-collapse">
+                    <div class="pm-doc-sprite pm-doc-sprite-triangle">
+                    </div>
+                  </div>
+                  <div class="pm-doc-sprite pm-doc-sprite-folder"></div>
+                  <div class="folder-link">
+                    <a class="nav-link dropdown-item" href="#fact-check">
+                      <div class="name truncate">
+                        <span>Fact Check</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <ul>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="/fact-check">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>/fact-check</span>
+                          </a>
+                        </div>
+                      </li>
+                </ul>
+              </li>
+              <li class="folder clearfix">
+                <div class="folder-label clearfix">
+                  <div class="toggle-folder-collapse">
+                    <div class="pm-doc-sprite pm-doc-sprite-triangle">
+                    </div>
+                  </div>
+                  <div class="pm-doc-sprite pm-doc-sprite-folder"></div>
+                  <div class="folder-link">
+                    <a class="nav-link dropdown-item" href="#media">
+                      <div class="name truncate">
+                        <span>Trending</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <ul>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="GET /v1/trending">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>GET /v1/trending</span>
+                          </a>
+                        </div>
+                      </li>
+                </ul>
+              </li>
+              <li class="folder clearfix">
+                <div class="folder-label clearfix">
+                  <div class="toggle-folder-collapse">
+                    <div class="pm-doc-sprite pm-doc-sprite-triangle">
+                    </div>
+                  </div>
+                  <div class="pm-doc-sprite pm-doc-sprite-folder"></div>
+                  <div class="folder-link">
+                    <a class="nav-link dropdown-item" href="#media">
+                      <div class="name truncate">
+                        <span>News</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <ul>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="GET /v1/news">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>GET /v1/news</span>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="GET /v1/news/articles/hot?sortBy=created">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>GET /v1/news/articles/hot?sortBy=created</span>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="/v1/news/hot">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>/v1/news/hot</span>
+                          </a>
+                        </div>
+                      </li>
+                </ul>
+              </li>
+              <li class="folder clearfix">
+                <div class="folder-label clearfix">
+                  <div class="toggle-folder-collapse">
+                    <div class="pm-doc-sprite pm-doc-sprite-triangle">
+                    </div>
+                  </div>
+                  <div class="pm-doc-sprite pm-doc-sprite-folder"></div>
+                  <div class="folder-link">
+                    <a class="nav-link dropdown-item" href="#media">
+                      <div class="name truncate">
+                        <span>Congress</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <ul>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="http://api.politi.cc/v1/congress/house">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>http://api.politi.cc/v1/congress/house</span>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="http://api.politi.cc/v1/congress/senate">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>http://api.politi.cc/v1/congress/senate</span>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="request">
+                        <div class="GET method">
+                          <span>GET</span>
+                        </div>
+                        <div class="request-name" title="http://api.politi.cc/v1/congressman?id=[CONGRESSMEN ID]">
+                          <a class="nav-link dropdown-item" href="#">
+                            <span>http://api.politi.cc/v1/congressman?id=[CONGRESSMEN ID]</span>
+                          </a>
+                        </div>
+                      </li>
+                </ul>
+              </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/handlebars.runtime.min.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/templates.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/helpers.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/jquery.min.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/snap.svg-min.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/jquery.scrollIntoView.min.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/lodash.min.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/prism.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/slug.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/clipboard.min.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/dependencies/tether.min.js"></script>
+    <script src="https://documenter.getpostman.com/docs-assets/js/bootstrap.js"></script>
+
+    <script src="https://documenter.getpostman.com/docs-assets/js/messenger.js"></script>
+<!--  //src="https://documenter.getpostman.com/docs-assets/js/custom.js"-->
+    <script
+    src="./custom.js"
+     id="script-data-scope"
+      data-var-user-id=""
+      data-var-environment="production"
+      data-var-team-id=""
+      data-var-domain-url="https://domains.postman.tech/"
+      data-var-host="https://documenter.getpostman.com"></script>
+
+  </body>
+</html>

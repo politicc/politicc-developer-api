@@ -1,0 +1,860 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "3cca7e4f-cdb6-9846-ed13-529dc8cc0537",
+      "collectionId": "3cca7e4f-cdb6-9846-ed13-529dc8cc0537",
+      "customColor": {
+        "highlight": "fa0030",
+        "right-sidebar": "f7f7f7",
+        "top-bar": "FFFFFF"
+      },
+      "description": "",
+      "languages": [{
+          "client": "curl",
+          "name": "cURL",
+          "target": "shell"
+        },
+        {
+          "client": "jquery",
+          "name": "jQuery",
+          "target": "javascript"
+        },
+        {
+          "client": "native",
+          "name": "Ruby",
+          "target": "ruby"
+        },
+        {
+          "client": "requests",
+          "name": "Python Requests",
+          "target": "python"
+        },
+        {
+          "client": "native",
+          "name": "Node",
+          "target": "node"
+        },
+        {
+          "client": "curl",
+          "name": "PHP",
+          "target": "php"
+        },
+        {
+          "client": "native",
+          "name": "Go",
+          "target": "go"
+        }
+      ],
+      "name": "Politi.cc Developer API",
+      "owner": "1666902",
+      "privateUrl": "https://documenter.getpostman.com/collection/view/1666902-3cca7e4f-cdb6-9846-ed13-529dc8cc0537",
+      "public": true,
+      "publishedId": "6mz5cLC",
+      "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [{
+        "_postman_id": "0dc6e95a-c04a-ce22-6f7a-4429a9b8ab0e",
+        "description": "",
+        "item": [{
+            "_postman_id": "1ec82a57-3e21-8a25-9ea9-659902a4b68b",
+            "name": "/v1/media/company/:companyId (or companySlug)",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name"
+            },
+            "response": [],
+            "sample": [{
+              "name": "/v1/media/company/:companyId (or companySlug)",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"media\",\n    \"company\",\n    \"cnn\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/media/company/cnn\"\n\nquerystring = {\"sortPersonnelBy\":\"name\"}\n\nresponse = requests.request(\"GET\", url, params=querystring)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url 'http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name'",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          },
+          {
+            "_postman_id": "6d3cceb4-8191-bfb4-f5f7-30e999227e0b",
+            "name": "/v1/media/company",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/media/company?id=11198659"
+            },
+            "response": [],
+            "sample": [{
+              "name": "/v1/media/company",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/media/company?id=11198659"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/media/company?id=11198659\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"media\",\n    \"company\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/media/company?id=11198659\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/media/company\"\n\nquerystring = {\"id\":\"11198659\"}\n\nresponse = requests.request(\"GET\", url, params=querystring)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/media/company?id=11198659\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url 'http://api.politi.cc/v1/media/company?id=11198659'",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/media/company?id=11198659\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          },
+          {
+            "_postman_id": "542ba15d-cbe1-c4b2-004e-646b7da6991a",
+            "name": "GET /v1/media/company",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/media/company?pageSize=999&sortBy=name"
+            },
+            "response": [],
+            "sample": [{
+              "name": "GET /v1/media/company",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/media/company?pageSize=999&sortBy=name"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/media/company?pageSize=999&sortBy=name\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"media\",\n    \"company\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/media/company?pageSize=999&sortBy=name\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/media/company\"\n\nquerystring = {\"pageSize\":\"999\",\"sortBy\":\"name\"}\n\nresponse = requests.request(\"GET\", url, params=querystring)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/media/company?pageSize=999&sortBy=name\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url 'http://api.politi.cc/v1/media/company?pageSize=999&sortBy=name'",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/media/company?pageSize=999&sortBy=name\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          },
+          {
+            "_postman_id": "eecc8e39-77ad-f59d-c92f-034a6791acb1",
+            "name": "GET /v1/media/company/personnel | param=[sortPerssonelBy]",
+            "request": {
+              "body": {},
+              "description": "<p>Get all persons employed by company that write or publish news articles</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name&token=[TOKEN]"
+            },
+            "response": [],
+            "sample": [{
+              "name": "GET /v1/media/company/personnel | param=[sortPerssonelBy]",
+              "request": {
+                "body": {},
+                "description": "<p>Get all persons employed by company that write or publish news articles</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name&token=[TOKEN]"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name&token=[TOKEN]\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"media\",\n    \"company\",\n    \"cnn\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name&token=[TOKEN]\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/media/company/cnn\"\n\nquerystring = {\"sortPersonnelBy\":\"name\",\"token\":\"[TOKEN]\"}\n\nresponse = requests.request(\"GET\", url, params=querystring)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name&token=[TOKEN]\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url 'http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name&token=[TOKEN]'",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/media/company/cnn?sortPersonnelBy=name&token=[TOKEN]\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          }
+        ],
+        "name": "Media"
+      },
+      {
+        "_postman_id": "783380f6-dfcd-00cb-4e13-e19020b41a96",
+        "description": "",
+        "item": [{
+          "_postman_id": "0c966e2e-0f5c-3e29-8f02-ac0a0e61277c",
+          "name": "/fact-check",
+          "request": {
+            "body": {},
+            "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+            "header": [],
+            "method": "GET",
+            "url": "http://api.politi.cc/v1/fact-check?token=[X-POLITICC-API-KEY]"
+          },
+          "response": [{
+            "_postman_previewlanguage": "json",
+            "_postman_previewtype": "text",
+            "body": "{\"success\":false,\"message\":\"Failed to authenticate token.\"}",
+            "code": 200,
+            "cookie": [],
+            "header": [{
+                "description": "",
+                "key": "Access-Control-Allow-Origin",
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "description": "",
+                "key": "Connection",
+                "name": "Connection",
+                "value": "keep-alive"
+              },
+              {
+                "description": "",
+                "key": "Content-Length",
+                "name": "Content-Length",
+                "value": "59"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json; charset=utf-8"
+              },
+              {
+                "description": "",
+                "key": "Date",
+                "name": "Date",
+                "value": "Sat, 05 Aug 2017 19:32:42 GMT"
+              },
+              {
+                "description": "",
+                "key": "Etag",
+                "name": "Etag",
+                "value": "W/\"3b-iVQBwHeWnXIsDdsvzTFQ8Wkrerk\""
+              },
+              {
+                "description": "",
+                "key": "Server",
+                "name": "Server",
+                "value": "Cowboy"
+              },
+              {
+                "description": "",
+                "key": "Strict-Transport-Security",
+                "name": "Strict-Transport-Security",
+                "value": "max-age=15552000; includeSubDomains"
+              },
+              {
+                "description": "",
+                "key": "Via",
+                "name": "Via",
+                "value": "1.1 vegur"
+              },
+              {
+                "description": "",
+                "key": "X-Content-Type-Options",
+                "name": "X-Content-Type-Options",
+                "value": "nosniff"
+              },
+              {
+                "description": "",
+                "key": "X-Dns-Prefetch-Control",
+                "name": "X-Dns-Prefetch-Control",
+                "value": "off"
+              },
+              {
+                "description": "",
+                "key": "X-Download-Options",
+                "name": "X-Download-Options",
+                "value": "noopen"
+              },
+              {
+                "description": "",
+                "key": "X-Frame-Options",
+                "name": "X-Frame-Options",
+                "value": "SAMEORIGIN"
+              },
+              {
+                "description": "",
+                "key": "X-Xss-Protection",
+                "name": "X-Xss-Protection",
+                "value": "1; mode=block"
+              }
+            ],
+            "id": "de09a835-acce-a9ed-9377-c7132b882db0",
+            "name": "Advanced Example",
+            "originalRequest": {
+              "body": {},
+              "header": [],
+              "method": "GET",
+              "url": {
+                "auth": {},
+                "host": [
+                  "api",
+                  "politi",
+                  "cc"
+                ],
+                "path": [
+                  "v1",
+                  "fact-check"
+                ],
+                "protocol": "http",
+                "query": [{
+                    "description": "",
+                    "equals": true,
+                    "key": "page",
+                    "value": "0"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "count",
+                    "value": "9"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "categories",
+                    "value": "Immigration,SKU,CNN"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "fields",
+                    "value": "author,thumbnail"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "token",
+                    "value": "[X-POLITICC-API-KEY]"
+                  }
+                ],
+                "raw": "http://api.politi.cc/v1/fact-check?page=0&count=9&categories=Immigration,SKU,CNN&fields=author,thumbnail&token=[X-POLITICC-API-KEY]",
+                "variable": []
+              }
+            },
+            "responseTime": "201",
+            "status": "OK"
+          }],
+          "sample": [{
+            "name": "Advanced Example",
+            "request": {
+              "body": {},
+              "header": [],
+              "method": "GET",
+              "url": {
+                "auth": {},
+                "host": [
+                  "api",
+                  "politi",
+                  "cc"
+                ],
+                "path": [
+                  "v1",
+                  "fact-check"
+                ],
+                "protocol": "http",
+                "query": [{
+                    "description": "",
+                    "equals": true,
+                    "key": "page",
+                    "value": "0"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "count",
+                    "value": "9"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "categories",
+                    "value": "Immigration,SKU,CNN"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "fields",
+                    "value": "author,thumbnail"
+                  },
+                  {
+                    "description": "",
+                    "equals": true,
+                    "key": "token",
+                    "value": "[X-POLITICC-API-KEY]"
+                  }
+                ],
+                "raw": "http://api.politi.cc/v1/fact-check?page=0&count=9&categories=Immigration,SKU,CNN&fields=author,thumbnail&token=[X-POLITICC-API-KEY]",
+                "variable": []
+              }
+            },
+            "response": {
+              "_postman_previewlanguage": "json",
+              "body": "{\"success\":false,\"message\":\"Failed to authenticate token.\"}"
+            },
+            "snippet": {
+              "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/fact-check?page=0&count=9&categories=Immigration,SKU,CNN&fields=author,thumbnail&token=[X-POLITICC-API-KEY]\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+              "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"fact-check\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+              "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/fact-check?page=0&count=9&categories=Immigration,SKU,CNN&fields=author,thumbnail&token=[X-POLITICC-API-KEY]\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+              "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/fact-check\"\n\nquerystring = {\"page\":\"0\",\"count\":\"9\",\"categories\":\"Immigration,SKU,CNN\",\"fields\":\"author,thumbnail\",\"token\":\"[X-POLITICC-API-KEY]\"}\n\nresponse = requests.request(\"GET\", url, params=querystring)\n\nprint(response.text)",
+              "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/fact-check?page=0&count=9&categories=Immigration,SKU,CNN&fields=author,thumbnail&token=[X-POLITICC-API-KEY]\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+              "cURL": "curl --request GET \\\n  --url 'http://api.politi.cc/v1/fact-check?page=0&count=9&categories=Immigration,SKU,CNN&fields=author,thumbnail&token=[X-POLITICC-API-KEY]'",
+              "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/fact-check?page=0&count=9&categories=Immigration,SKU,CNN&fields=author,thumbnail&token=[X-POLITICC-API-KEY]\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+            }
+          }]
+        }],
+        "name": "Fact Check"
+      },
+      {
+        "_postman_id": "eb897ecf-5081-048a-8ddc-bb9db54dd1a1",
+        "description": "",
+        "item": [{
+          "_postman_id": "572f3b15-4d81-fbe8-656b-dbcb8ead3ae3",
+          "name": "GET /v1/trending",
+          "request": {
+            "body": {},
+            "description": "",
+            "header": [],
+            "method": "GET",
+            "url": "http://api.politi.cc/v1/trending/searches"
+          },
+          "response": [],
+          "sample": [{
+            "name": "GET /v1/trending",
+            "request": {
+              "body": {},
+              "description": "",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/trending/searches"
+            },
+            "response": {
+              "body": ""
+            },
+            "snippet": {
+              "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/trending/searches\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+              "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"trending\",\n    \"searches\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+              "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/trending/searches\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+              "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/trending/searches\"\n\nresponse = requests.request(\"GET\", url)\n\nprint(response.text)",
+              "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/trending/searches\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+              "cURL": "curl --request GET \\\n  --url http://api.politi.cc/v1/trending/searches",
+              "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/trending/searches\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+            }
+          }]
+        }],
+        "name": "Trending"
+      },
+      {
+        "_postman_id": "89ab624b-f6c4-a772-9110-879743fede58",
+        "description": "",
+        "item": [{
+            "_postman_id": "3bdaf831-f7e8-180a-17de-3cf414ca30e8",
+            "name": "GET /v1/news",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/news"
+            },
+            "response": [],
+            "sample": [{
+              "name": "GET /v1/news",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/news"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/news\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"news\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/news\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/news\"\n\nresponse = requests.request(\"GET\", url)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/news\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url http://api.politi.cc/v1/news",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/news\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          },
+          {
+            "_postman_id": "8131dbcb-2825-a300-ec05-0f8e172a32ad",
+            "name": "GET /v1/news/articles/hot?sortBy=created",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/news/articles/hot?sortBy=created"
+            },
+            "response": [],
+            "sample": [{
+              "name": "GET /v1/news/articles/hot?sortBy=created",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/news/articles/hot?sortBy=created"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/news/articles/hot?sortBy=created\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"news\",\n    \"articles\",\n    \"hot\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/news/articles/hot?sortBy=created\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/news/articles/hot\"\n\nquerystring = {\"sortBy\":\"created\"}\n\nresponse = requests.request(\"GET\", url, params=querystring)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/news/articles/hot?sortBy=created\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url 'http://api.politi.cc/v1/news/articles/hot?sortBy=created'",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/news/articles/hot?sortBy=created\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          },
+          {
+            "_postman_id": "26cc7c9a-2819-7f11-85b8-4f8c74c7ada4",
+            "name": "/v1/news/hot",
+            "request": {
+              "body": {},
+              "description": "",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/news/hot"
+            },
+            "response": [],
+            "sample": [{
+              "name": "/v1/news/hot",
+              "request": {
+                "body": {},
+                "description": "",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/news/hot"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/news/hot\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"news\",\n    \"hot\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/news/hot\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/news/hot\"\n\nresponse = requests.request(\"GET\", url)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/news/hot\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url http://api.politi.cc/v1/news/hot",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/news/hot\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          }
+        ],
+        "name": "News"
+      },
+      {
+        "_postman_id": "553d5cd0-5de3-7b62-97a8-a0d899e0824c",
+        "description": "",
+        "item": [{
+            "_postman_id": "f5ec6ca9-80af-13b0-41b1-64a1bcb90e76",
+            "name": "http://api.politi.cc/v1/congress/house",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/congress/house"
+            },
+            "response": [],
+            "sample": [{
+              "name": "http://api.politi.cc/v1/congress/house",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/congress/house"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/congress/house\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"congress\",\n    \"house\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/congress/house\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/congress/house\"\n\nresponse = requests.request(\"GET\", url)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/congress/house\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url http://api.politi.cc/v1/congress/house",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/congress/house\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          },
+          {
+            "_postman_id": "735be56c-5282-2810-8fca-cb5cd6a2f35d",
+            "name": "http://api.politi.cc/v1/congress/senate",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/congress/senate"
+            },
+            "response": [],
+            "sample": [{
+              "name": "http://api.politi.cc/v1/congress/senate",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/congress/senate"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/congress/senate\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"congress\",\n    \"senate\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/congress/senate\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/congress/senate\"\n\nresponse = requests.request(\"GET\", url)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/congress/senate\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url http://api.politi.cc/v1/congress/senate",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/congress/senate\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          },
+          {
+            "_postman_id": "c1e5e075-459a-b3d5-fc05-23fa65d36f69",
+            "name": "http://api.politi.cc/v1/congressman?id=[CONGRESSMEN ID]",
+            "request": {
+              "body": {},
+              "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "header": [],
+              "method": "GET",
+              "url": "http://api.politi.cc/v1/congressman?id=[CONGRESSMEN ID]"
+            },
+            "response": [],
+            "sample": [{
+              "name": "http://api.politi.cc/v1/congressman?id=[CONGRESSMEN ID]",
+              "request": {
+                "body": {},
+                "description": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameters</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>page</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>sortBy</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>count</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>categories</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>fields</code></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+                "header": [],
+                "method": "GET",
+                "url": "http://api.politi.cc/v1/congressman?id=[CONGRESSMEN ID]"
+              },
+              "response": {
+                "body": ""
+              },
+              "snippet": {
+                "Go": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"io/ioutil\"\n)\n\nfunc main() {\n\n\turl := \"http://api.politi.cc/v1/congressman?id=[CONGRESSMEN%20ID]\"\n\n\treq, _ := http.NewRequest(\"GET\", url, nil)\n\n\tres, _ := http.DefaultClient.Do(req)\n\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\n\tfmt.Println(res)\n\tfmt.Println(string(body))\n\n}",
+                "Node": "var http = require(\"http\");\n\nvar options = {\n  \"method\": \"GET\",\n  \"hostname\": [\n    \"api\",\n    \"politi\",\n    \"cc\"\n  ],\n  \"path\": [\n    \"v1\",\n    \"congressman\"\n  ],\n  \"headers\": {}\n};\n\nvar req = http.request(options, function (res) {\n  var chunks = [];\n\n  res.on(\"data\", function (chunk) {\n    chunks.push(chunk);\n  });\n\n  res.on(\"end\", function () {\n    var body = Buffer.concat(chunks);\n    console.log(body.toString());\n  });\n});\n\nreq.end();",
+                "PHP": "<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  CURLOPT_URL => \"http://api.politi.cc/v1/congressman?id=[CONGRESSMEN%20ID]\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                "Python Requests": "import requests\n\nurl = \"http://api.politi.cc/v1/congressman\"\n\nquerystring = {\"id\":\"[CONGRESSMEN%20ID]\"}\n\nresponse = requests.request(\"GET\", url, params=querystring)\n\nprint(response.text)",
+                "Ruby": "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"http://api.politi.cc/v1/congressman?id=[CONGRESSMEN%20ID]\")\n\nhttp = Net::HTTP.new(url.host, url.port)\n\nrequest = Net::HTTP::Get.new(url)\n\nresponse = http.request(request)\nputs response.read_body",
+                "cURL": "curl --request GET \\\n  --url 'http://api.politi.cc/v1/congressman?id=[CONGRESSMEN%20ID]'",
+                "jQuery": "var settings = {\n  \"async\": true,\n  \"crossDomain\": true,\n  \"url\": \"http://api.politi.cc/v1/congressman?id=[CONGRESSMEN%20ID]\",\n  \"method\": \"GET\",\n  \"headers\": {}\n}\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});"
+              }
+            }]
+          }
+        ],
+        "name": "Congress"
+      }
+    ],
+    "meta": {
+      "id": "1666902-3cca7e4f-cdb6-9846-ed13-529dc8cc0537"
+    },
+    "variables": []
+  },
+  "environments": [{
+    "id": "47cd0f38-8fda-2aad-7e5a-cc69cfcafbbe",
+    "name": "Public Imgur Template.template",
+    "owner": "1666902",
+    "published": true,
+    "values": [{
+        "enabled": true,
+        "key": "clientId",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "password",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "username",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "accessToken",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "favoritesSort",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "albumHash",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "albumDeleteHash",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "commentId",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "imageHash",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "imageHash2",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "imageDeleteHash2",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "vote",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "section",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "page",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "sort",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "window",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "showViral",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "showMature",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "albumPreviews",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "commentSort",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "galleryHash",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "commentValue",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "subreddit",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "subredditImageId",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "enabled": true,
+        "key": "tagName",
+        "type": "text",
+        "value": ""
+      }
+    ]
+  }],
+  "run": {
+    "button": {
+      "css": "https://run.pstmn.io/button.css",
+      "js": "https://run.pstmn.io/button.js"
+    }
+  },
+  "team": {
+    "logo": "https://res.cloudinary.com/postman/image/upload/w_152,h_56,c_fit,f_auto,t_team_logo/v1/team/768118b36f06c94b0306958b980558e6915839447e859fe16906e29d683976f0"
+  },
+  "user": {
+    "permissions": {
+      "publish": false
+    }
+  },
+  "web": "https://www.getpostman.com/"
+}
